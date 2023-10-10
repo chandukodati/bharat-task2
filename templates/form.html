@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculator</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .container{
+        background-image: linear-gradient(rgb(9, 236, 199),rgb(207, 196, 196));
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .details{
+        background-image: linear-gradient(rgb(200, 82, 216),rgb(184, 154, 176));
+        padding: 20px 30px;
+        margin: 60px 60px;
+        text-align: center;
+        width: 380px;
+        border-radius: 10%;
+    }
+    img{
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        margin-right: 7px;
+
+    }
+    .members{
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+        text-align: start;
+    }
+    button{
+        align-items: center;
+
+    }
+    .members > label{
+        flex-basis: 130px;
+    }
+    .img{
+    	 background: url('https://previews.123rf.com/images/xicro/xicro1905/xicro190500080/122193587-close-up-and-selective-focus-shot-calculator-on-blue-background-copy-space-for-text.jpg');
+  	     filter: brightness(0.5);
+    	background-position: centre;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	height: 100%;
+    	width: 100%;
+    	z-index: -1;
+	}
+
+</style>
+	<body align=center>
+	<div class="img"></div>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4"><legend><h1>CALCULATOR</h1></legend></div>
+			<div class="col-md-4"></div>
+		</div>
+			<br>
+			<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form class="form-horizontal" method="post">
+					<div class="form-group">
+						<label class="control-label col-xs-3" for= "var_1" >Number1 :</label>
+						<div class="col-xs-7">
+							<input type="number" class="form-control" name="var_1"  value="{{ request.form['var_1'] }}" placeholder="&nbsp;0&nbsp;">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-xs-3" for= "var_1" >Number2 :</label>
+						<div class="col-xs-7">
+							<input type="number" class="form-control" name="var_2"  value="{{ request.form['var_2'] }}" placeholder="&nbsp;0&nbsp;">
+						</div>
+					</div>
+					<div class="form-group">
+            			<label class="control-label col-xs-3">Operation:</label>
+            			<div class="col-xs-7">
+                			<select class="form-control" name="operation">
+                    			<option>Addition</option>
+                    			<option>Subtraction</option>
+                    			<option>Multiplication</option>
+                    			<option>Division</option>
+                			</select>
+            			</div>
+            		</div>
+					<div class="form-group">
+            			<div class="col-xs-offset-3 col-xs-9">
+                			<input type="submit" class="btn btn-success" value="Submit">
+                			<input type="reset" class="btn btn-danger" value="Reset">
+            			</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-xs-3">Result :</label>
+						<div class="col-xs-7">
+							<input type="text" name="result" class="form-control" placeholder={{ entry }}>
+						</div>
+					</div>
+        		</form>
+        	</div>
+        	<div class="col-md-4"></div></div>
+		</div>
+	</body>
+</html>
